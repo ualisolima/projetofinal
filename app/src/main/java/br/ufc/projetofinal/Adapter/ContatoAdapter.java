@@ -17,7 +17,9 @@ import androidx.annotation.Nullable;
 import java.io.File;
 import java.util.ArrayList;
 
+import br.ufc.projetofinal.Activity.MensagemActivity;
 import br.ufc.projetofinal.Model.ContatoCell;
+import br.ufc.projetofinal.Model.ContatoConversaCell;
 import br.ufc.projetofinal.R;
 import br.ufc.projetofinal.Activity.RegistrarNumeroDeTelefoneActivity;
 import br.ufc.projetofinal.Activity.DetalhesDeUsuarioActivity;

@@ -70,9 +70,16 @@ public class RegistrarNumeroDeTelefoneActivity extends AppCompatActivity {
     }
 
     private void criarListaDePaises() {
-        ArrayList<String> paises = carregarNomesPaises();
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, paises);
 
+        locales = Locale.getISOCountries();
+        ArrayList<String> paises = new ArrayList<>();
+
+        for (String codigoPais : locales) {
+
+            Locale obj = new Locale("", codigoPais);
+            paises.add(obj.getDisplayCountry());
+        }
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, paises);
         Spinner paisSpinner = findViewById(R.id.pais);
         paisSpinner.setAdapter(adapter);
 
@@ -105,19 +112,6 @@ public class RegistrarNumeroDeTelefoneActivity extends AppCompatActivity {
         Intent intent = new Intent(this, VerificarNumeroDeTelefoneActivity.class);
         intent.putExtra("phone", codigoPais.getText().toString() + telefone.getText().toString());
         startActivity(intent);
-    }
-
-    public ArrayList<String> carregarNomesPaises() {
-
-        locales = Locale.getISOCountries();
-        ArrayList<String> countries = new ArrayList<>();
-
-        for (String countryCode : locales) {
-
-            Locale obj = new Locale("", countryCode);
-            countries.add(obj.getDisplayCountry());
-        }
-        return countries;
     }
 
     public static class HelperClass {

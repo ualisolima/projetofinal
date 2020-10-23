@@ -78,7 +78,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Carrier SMS charges may apply"
+        android:text="Taxas de Operadores poderao Ser Aplicadas"
         android:textAlignment="center"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"

@@ -247,6 +247,7 @@ public class ConversaActivity extends AppCompatActivity {
                     }
                 });
                 criarListaMensagens();
+                LocalBroadcastManager.getInstance(getContext()).registerReceiver(mensagemReceptor, new IntentFilter("serviceMessage"));
                 return conversas;
             }
             else {

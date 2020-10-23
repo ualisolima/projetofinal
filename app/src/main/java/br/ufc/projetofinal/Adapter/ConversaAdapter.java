@@ -71,7 +71,6 @@ public class ConversaAdapter extends ArrayAdapter<ContatoConversaCell> implement
             holder.fotoPerfil.setImageResource(R.drawable.conta);
         }
         else {
-            //holder.photoImageView.setImageURI(cell.getPhoto());
             Bitmap bitmap = RegistrarNumeroDeTelefoneActivity.HelperClass.decodeBitmapFromFile(new File(cell.getPhoto().toString()), 50, 50);
             holder.fotoPerfil.setImageBitmap(bitmap);
         }

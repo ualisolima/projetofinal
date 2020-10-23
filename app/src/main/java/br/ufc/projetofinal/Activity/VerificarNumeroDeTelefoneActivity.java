@@ -30,7 +30,6 @@ import br.ufc.projetofinal.R;
 
 public class VerificarNumeroDeTelefoneActivity extends AppCompatActivity {
 
-    private DatabaseReference mDatabase;
     FirebaseAuth mAuth;
     private static String code = "";
 
@@ -38,7 +37,6 @@ public class VerificarNumeroDeTelefoneActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verificar_numero_telefone);
-        mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
 
         Intent intent = getIntent();
@@ -70,6 +68,7 @@ public class VerificarNumeroDeTelefoneActivity extends AppCompatActivity {
                             Intent intent = new Intent(VerificarNumeroDeTelefoneActivity.this, SalvarDadosDoPerfilActivity.class);
                             intent.putExtra("phone", string);
                             startActivity(intent);
+                            System.out.println("aqui 1");
                             finish();
                         }
                     }).addOnFailureListener(new OnFailureListener() {
@@ -93,6 +92,7 @@ public class VerificarNumeroDeTelefoneActivity extends AppCompatActivity {
                                         Intent intent = new Intent(VerificarNumeroDeTelefoneActivity.this, SalvarDadosDoPerfilActivity.class);
                                         intent.putExtra("phone", string);
                                         startActivity(intent);
+                                        System.out.println("aqui 2");
                                         finish();
                                     }
                                 });
